@@ -1,0 +1,203 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /* 2. Remove default margin */
+  * {
+    margin: 0;
+  }
+  
+  body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* 5. Improve media defaults */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  /* 6. Inherit fonts for form controls */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  /* 7. Avoid text overflows */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  /* 8. Improve line wrapping */
+  p {
+    text-wrap: pretty;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+  
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+body {
+    padding: 50px;
+}
+
+.sidebar {
+    height: 100%;
+    width: 500px;
+    position: fixed;
+    top: 0;
+    left: -500px;
+    background-color: white;
+    transition: left 1s ease-in-out;
+    z-index: 1000;
+    border-right: solid;
+    border-width: 1px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+}
+
+#book-form {
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+    gap: 50px;
+}
+
+input, select, button[type=submit], select option {
+    height: 50px;
+}
+
+input[type="text"], input[type="number"], select {
+    padding-left: 10px;
+}
+
+select {
+    width: 100%;
+}
+
+button[type="submit"] {
+    background-color: green;
+    color: white;
+    width: 100%;
+    padding-right: 10px;
+    border-style: none;
+    font-family: "Inter", serif;
+    font-size: 1.8em;
+    text-align: center;
+}
+
+
+.close {
+    height: 100px;
+    width: auto;
+    align-self: flex-end;
+    margin-top: 10px;
+    margin-right: 10px;;
+}
+
+.sidebar.show {
+    left: 0;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    gap: 30px;
+    justify-content: center;
+}
+
+.display-card {
+    position: relative;
+    display: grid;
+    grid-template-rows: auto auto auto 50px;
+    border-style: solid;
+    border-width: 1px;
+    min-height: 250px;
+}
+
+.display-card:hover, .add-book-card:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.add-book-card {
+    display: grid;
+    place-items: center;
+    border-style: solid;
+    border-width: 1px;
+    min-height: 250px;
+}
+
+.add-book-card img {
+    height: 80%;
+    width: auto;
+
+}
+
+.display-card h3, .display-card p {
+    align-self: center;
+    max-width: 265px;
+}
+
+.display-card h3 {
+    font-family: "Inter", serif;
+    font-size: 1.8em;
+    margin: 10px 35px 0 10px;
+}
+
+.display-card p:first-of-type {
+    font-family: "Noto Serif", serif;
+    font-size: 1.6em;
+    font-style: italic;
+    margin: 0 10px;
+}
+
+.display-card p:nth-of-type(2) {
+    font-family: "Inter", serif;
+    font-size: 1.4em;
+    margin: 0px 10px 10px 10px;
+}
+
+.delete {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 25px;
+    width: auto;
+}
+
+.read {
+    background-color: green;
+    color: white;
+}
+
+.not-read {
+    background-color: red;
+    color: white;
+}
+
+.toggle-read {
+    border-style: none;
+    font-family: "Inter", serif;
+    font-size: 1.8em;
+    text-align: right;
+    padding-right: 10px;
+}
+
+/* cursor: pointer;*/
+
+.delete, .close, .add-book-card img, .toggle-read, button[type="submit"] {
+    cursor: pointer;
+}

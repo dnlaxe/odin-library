@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+
+<!-- sidebar -->
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-content">
+            <img src="back.svg" class="close">
+            <form id="book-form">
+                <input type="text" id="title" placeholder="Title">
+                <input type="text" id="author" placeholder="Author">
+                <input type="number" id="pages" placeholder="Pages">
+                <select id="read">
+                    <option value="true">Read</option>
+                    <option value="false">Not read</option>
+                </select>
+                <button type="submit">+</button>
+            </form>
+
+
+        </div>
+    </div>    
+
+    <div id="grid"></div>
+
+    <script src="script.js"></script> 
+
+</body>
+</html>
